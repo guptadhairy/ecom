@@ -6,7 +6,12 @@ const user = {_id: "dhirubhai", role:"admin"};
 
 const Header = () => {
 
+    
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const logoutHandler = ()=>{
+        setIsOpen(false);
+    }
+
   return (
     <nav className="header">
         <Link onClick={()=> setIsOpen(false)} to={"/"}>Home</Link>
@@ -22,7 +27,7 @@ const Header = () => {
                             <Link onClick={()=> setIsOpen(false)} to={"/admin/dashboard"}>Admin</Link>
                         )}
                         <Link onClick={()=> setIsOpen(false)} to={"/orders"}>Orders</Link>
-                        <button><FaSignOutAlt /></button>
+                        <button onClick={logoutHandler}><FaSignOutAlt /></button>
                     </div>
                 </dialog>
                 </>
